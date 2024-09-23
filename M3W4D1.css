@@ -1,0 +1,185 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black; 
+    color: white;
+}
+
+header {
+    position: relative;
+    height: 100px; /* Altezza dell'header */
+    display: flex;
+    align-items: center;  /* Allinea verticalmente logo e menu */
+    padding: 10px 20px;
+}
+
+h2, h3 {
+    margin-left: 40px;  /* Aggiungi un margine sinistro di 20px a tutti i paragrafi e intestazioni */
+}
+
+h2 { display: flex;  /* Per allineare il testo e il menu a cascata sulla stessa riga */
+    align-items: center;  /* Allinea verticalmente il menu con il testo */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;  /* Dispone logo e menu in orizzontale */
+    align-items: center;  /* Allinea verticalmente al centro */
+    padding: 10px;  /* Spaziatura interna */
+}
+
+.logo {
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+nav {
+    flex-grow: 1; /* Spinge il menu a riempire lo spazio rimanente */
+}
+
+.menu {
+    list-style-type: none;  /* Rimuove i pallini di default */
+    display: flex;  /* Dispone gli elementi del menu orizzontalmente */
+    justify-content: flex-start;
+}
+
+.menu li {
+    margin-right: 20px;  /* Spaziatura tra le voci del menu */
+    margin-left: 0px;
+    
+}
+
+.menu li a {
+    text-decoration: none;  /* Rimuove la sottolineatura dai link */
+    color: white;  /* Colore del testo del menu */
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: font-weight 0.3s ease, color 0.3s ease;  /* Animazione fluida */
+}
+
+.menu li a:hover {
+    border-radius: 5px;  /* Aggiunge un leggero arrotondamento */
+    font-weight: bold;
+}
+
+
+.dropdown {
+    position: relative;  /* Posiziona il menu a cascata in relazione al pulsante */
+    display: inline-block;
+    margin-left: 20px;  /* Aggiunge uno spazio tra "TV Shows" e il menu */
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;  /* Colore del testo */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Stile per il contenuto del menu a cascata */
+.dropdown-content {
+    display: none;  /* Nasconde il menu a cascata inizialmente */
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  /* Ombra per effetto */
+    z-index: 1;
+    border: 2px solid white;
+}
+
+/* Stile dei link nel menu */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;  /* Cambia colore al passaggio del mouse */
+    color: black;
+}
+
+/* Mostra il menu a cascata al passaggio del mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Cambia il colore del pulsante al passaggio del mouse */
+.dropdown:hover .dropbtn {
+    background-color: #333;
+}
+
+
+.image-container {
+    display: flex;  /* Dispone le immagini in orizzontale */
+    justify-content: space-around;  /* Spazio uniforme tra le immagini */
+    flex-wrap: nowrap;  /* Impedisce il wrap delle immagini in più righe */
+    overflow-x: auto;  /* Abilita lo scroll orizzontale se le immagini superano la larghezza */
+    margin-bottom: 20px;  /* Spazio sotto il contenitore */
+}
+
+/* Stile delle immagini */
+.image {
+    flex: 1;  /* Le immagini si ridimensionano uniformemente */
+    max-width: 190px;  /* Larghezza massima delle immagini */
+    height: auto;  /* Mantiene le proporzioni */
+    margin: 5px;  /* Margine attorno alle immagini per spazio */
+    transition: transform 0.3s ease;  /* Transizione fluida per l'ingrandimento */
+}
+
+.image:hover {
+    transform: scale(1.1);  /* Ingrandisce l'immagine del 20% */
+}
+
+/* Stile del footer */
+footer {
+    background-color: black;  /* Sfondo scuro per il footer */
+    color: rgb(168, 166, 166);  /* Testo bianco */
+    padding: 20px;  /* Spaziatura interna */
+}
+
+/* Contenitore del footer */
+.footer-container {
+    display: grid;  /* Utilizza grid layout */
+    grid-template-columns: repeat(4, 1fr);  /* 4 colonne uguali */
+    gap: 20px;  /* Spazio tra le colonne */
+}
+
+/* Stile per le colonne */
+.column {
+    padding: 10px;  /* Spaziatura interna delle colonne */
+}
+
+/* Stile per le voci */
+.column p {
+    margin: 20px 0;  /* Margine sopra e sotto le voci */
+}
+
+.column p:hover {
+    font-weight: bold;  /* Testo in grassetto al passaggio del mouse */
+}
+
+/* Stile del pulsante */
+.footer-button {
+    background-color: black;  /* Sfondo nero */
+    color: rgb(168, 166, 166);  /* Testo bianco */
+    border: 2px solid white;  /* Contorno bianco */
+    padding: 10px 20px;  /* Spaziatura interna */
+    font-size: 16px;  /* Dimensione del font */
+    cursor: pointer;  /* Cambia il cursore quando si passa sopra */
+    transition: background-color 0.3s ease;  /* Transizione fluida per il colore di sfondo */
+    margin-top: 20px;  /* Margine sopra il pulsante */
+}
+
+/* Effetto al passaggio del mouse */
+.footer-button:hover {
+    background-color: white;  /* Cambia colore di sfondo al passaggio del mouse */
+    color: black;  /* Cambia colore del testo al passaggio del mouse */
+}
